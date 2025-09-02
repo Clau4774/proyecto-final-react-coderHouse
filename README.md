@@ -1,12 +1,17 @@
-# React + Vite
+## Proyecto final coderHouse curso React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Primer entrega:
 
-Currently, two official plugins are available:
+# Objetivos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Comprender los conceptos básicos de React y su estructura de componentes.
 
-## Expanding the ESLint configuration
+- Crear las bases para la homepage del ecommerce
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Requisitos
+
+- Archivos para los componentes NavBar, CartWidget, e ItemListContainer, dentro de la carpeta components.
+
+- Organización correcta de los mismos: NavBar e ItemListContainer serán renderizados en App, mientras que CartWidget será renderizado en NavBar.
+
+- Uso de props para enviar un string con un mensaje hacia el componente ItemListContainer.
