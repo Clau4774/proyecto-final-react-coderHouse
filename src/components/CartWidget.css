@@ -1,0 +1,22 @@
+#cart-widget-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    padding: 1rem;
+    border: 1px solid var(--border-primary-color);
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+#cart-widget-container span {
+    position: absolute;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    bottom: 0;
+    text-align: center;
+    background-color: #000;
+    color: #eee;
+    border: 1px solid var(--border-primary-color);
+    border-radius: 50%;
+}

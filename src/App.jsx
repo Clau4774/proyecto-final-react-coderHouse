@@ -8,7 +8,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer title='Bienvenido a la tienda N°1'/>
+      <main>
+        <ItemListContainer title='Bienvenido a la tienda N°1'/>
+      </main>
     </>
   )
 }
