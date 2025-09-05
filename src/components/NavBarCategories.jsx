@@ -13,6 +13,9 @@ export const NavBarCategories = () => {
             <a href="#" className="navbar-category-item">
                 Cervezas
             </a>
+            <a href="#" className="navbar-category-item">
+                Bebidas sin alcohol
+            </a>
         </nav>
     )
 }

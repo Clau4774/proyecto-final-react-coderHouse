@@ -1,7 +1,9 @@
 #cart-widget-container {
-    position: relative;
+    position: fixed;
     width: 64px;
     height: 64px;
+    top: 1rem;
+    right: 20px;
     padding: 1rem;
     border: 1px solid var(--border-primary-color);
     border-radius: 50%;

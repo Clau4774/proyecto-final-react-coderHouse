@@ -9,7 +9,7 @@ function App() {
     <>
       <NavBar />
       <main>
-        <ItemListContainer title='Bienvenido a la tienda N°1'/>
+        <ItemListContainer title='Bienvenido a la tienda de bebidas que estabas esperando'/>
       </main>
     </>
   )

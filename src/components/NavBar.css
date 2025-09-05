@@ -1,9 +1,15 @@
 #header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 2rem 4rem;
     background: var(--primary-color);
     max-height: 30vh;
     position: relative;
+}
+
+#header-main-title {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--font-primary-color)
 }
