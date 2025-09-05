@@ -5,7 +5,13 @@ export const NavBarCategories = () => {
     return (
         <nav id="navbar-categories-container"> 
             <a href="#" className="navbar-category-item">
+                Inicio
+            </a>
+            <a href="#" className="navbar-category-item">
                 Destilados
+            </a>
+            <a href="#" className="navbar-category-item">
+                Cócteles
             </a>
             <a href="#" className="navbar-category-item">
                 Vinos y espumantes
