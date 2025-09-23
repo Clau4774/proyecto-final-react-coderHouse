@@ -10,8 +10,14 @@
 
 .navbar-category-item {
     border: 1px solid var(--border-primary-color);
-    padding: .5rem .25rem;
-    margin-bottom: 1rem;
+    padding: .5rem .35rem;
     text-decoration: none;
     color: var(--font-primary-color);
+    transition: all .3s;
+}
+
+.navbar-category-item:hover {
+    background: #333;
+    color: #eee;
+    border: 1px solid #eee;
 }

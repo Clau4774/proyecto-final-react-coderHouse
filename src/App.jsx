@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 import { ItemListContainer } from './components/ItemListContainer'
 import { NavBar } from './components/NavBar'
@@ -8,9 +9,14 @@ function App() {
   return (
     <>
       <NavBar />
-      <main>
-        <ItemListContainer title='Bienvenido a la tienda de bebidas que estabas esperando'/>
-      </main>
+      <BrowserRouter>
+          <main>
+        <Routes>
+            <Route path='/'  element={<ItemListContainer title='Bienvenido a la tienda de bebidas que estabas esperando'/>}/>
+            
+        </Routes>
+          </main>
+      </BrowserRouter>
     </>
   )
 }

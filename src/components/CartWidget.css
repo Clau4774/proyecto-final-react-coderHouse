@@ -8,6 +8,7 @@
     border: 1px solid var(--border-primary-color);
     border-radius: 50%;
     background-color: #fff;
+    cursor: pointer;
 }
 
 #cart-widget-container span {
