@@ -14,8 +14,9 @@ export const ItemDetail = () => {
         data.then(product => {
             setProduct(product);
             setLoading(false);
-        })
-    })
+            console.log(product, 'product')
+        }).catch(error => console.error(error))
+    },[productId])
 
     if(loading) return (
         <section>

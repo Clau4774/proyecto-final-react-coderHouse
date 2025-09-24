@@ -16,7 +16,7 @@ export const getOneProductById = (id) => {
             const data = await fetch('/data/productos.json');   
             if(!data) reject('Se produjo un error al solicitar la información')
             const dataJson = await data.json();
-            const product = dataJson.find(product => product.id === id);
+            const product = dataJson.find(product => product.id === Number(id));
             resolve(product)
         },1500)
     })
