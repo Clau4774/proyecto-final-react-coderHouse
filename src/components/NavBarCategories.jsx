@@ -1,27 +1,25 @@
 import './NavBarCategories.css'
+import { Link } from 'react-router'
 
 export const NavBarCategories = () => {
 
     return (
         <nav id="navbar-categories-container"> 
-            <a href="#" className="navbar-category-item">
+            <Link to="/" className="navbar-category-item">
                 Inicio
-            </a>
-            <a href="#" className="navbar-category-item">
+            </Link>
+            <Link to="category/destilados" className="navbar-category-item">
                 Destilados
-            </a>
-            <a href="#" className="navbar-category-item">
-                Cócteles
-            </a>
-            <a href="#" className="navbar-category-item">
+            </Link>
+            <Link to="category/vinos-y-espumantes" className="navbar-category-item">
                 Vinos y espumantes
-            </a>
-            <a href="#" className="navbar-category-item">
+            </Link>
+            <Link to="category/cervezas" className="navbar-category-item">
                 Cervezas
-            </a>
-            <a href="#" className="navbar-category-item">
+            </Link>
+            <Link to="category/bebidas-sin-alcohol" className="navbar-category-item">
                 Bebidas sin alcohol
-            </a>
+            </Link>
         </nav>
     )
 }

@@ -1,0 +1,9 @@
+.product-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    background: #eeeeee;
+    padding: .5rem;
+}

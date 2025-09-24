@@ -5,3 +5,16 @@
 #item-list-title {
     text-align: center;
 }
+
+#items-list {
+    display: flex;
+    max-width: 1400px;
+    padding: 1rem;
+    background: #ffedd8;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+    border-radius: 5px;
+}
