@@ -1,4 +1,4 @@
-.product-container {
+#product-container {
     max-width: 1240px;
     margin: auto;
 }
@@ -15,4 +15,15 @@
     font-size: 30px;
     line-height: 2lh;
     align-items: center;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+
+    #product-container {
+        max-width: 80%;
+    }
+
+    #product-image-container-and-description {
+        flex-direction: column;
+    }
 }

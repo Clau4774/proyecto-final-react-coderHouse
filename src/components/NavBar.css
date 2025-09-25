@@ -13,3 +13,9 @@
     text-decoration: none;
     color: var(--font-primary-color)
 }
+
+@media (min-width: 300px) and (max-width: 600px) {
+    #header-container {
+        flex-direction: column;
+    }
+}

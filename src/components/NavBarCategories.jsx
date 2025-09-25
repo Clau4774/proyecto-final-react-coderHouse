@@ -3,7 +3,8 @@ import { Link } from 'react-router'
 
 export const NavBarCategories = () => {
 
-    return (
+
+    return (           
         <nav id="navbar-categories-container"> 
             <Link to="/" className="navbar-category-item">
                 Inicio

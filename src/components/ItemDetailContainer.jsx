@@ -25,7 +25,7 @@ export const ItemDetailContainer = () => {
     )
 
     return (
-        <section className="product-container">
+        <section id="product-container">
             <h2 id="product-title">Producto: <span style={{textDecoration: 'underline'}}>{product.title}</span></h2>
             <div id="product-image-container-and-description" className="box-shadow rounded">
                 <img id="product-image" src={product.img} alt={`Foto de un ${product.title}`} />
