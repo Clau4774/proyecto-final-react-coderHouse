@@ -3,7 +3,7 @@ import './App.css'
 import { ItemListContainer } from './components/ItemListContainer'
 import { NavBar } from './components/NavBar'
 import { PageNotFound } from './components/PageNotFound'
-import { ItemDetail } from './components/ItemDetail'
+import { ItemDetailContainer } from './components/ItemDetailContainer'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
         <Routes>
             <Route path='/'  element={<ItemListContainer title='Bienvenido a la tienda de bebidas que estabas esperando'/>}/>
             <Route path='category/:productCategory' element={<ItemListContainer title={`Listado de productos filtrados: `}/>}/>
-            <Route path='category/:productCategory/product/:productId' element={<ItemDetail />}/>
+            <Route path='category/:productCategory/product/:productId' element={<ItemDetailContainer />}/>
             <Route path="*" element={<PageNotFound />}/>
         </Routes>
           </main>

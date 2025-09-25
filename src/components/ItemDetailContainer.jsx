@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { getOneProductById } from "../utils/bringData"
 import { useParams } from "react-router";
+import './ItemDetailContainer.css'
 
-export const ItemDetail = () => {
+export const ItemDetailContainer = () => {
 
     const {productId} = useParams();
 
@@ -14,21 +15,22 @@ export const ItemDetail = () => {
         data.then(product => {
             setProduct(product);
             setLoading(false);
-            console.log(product, 'product')
         }).catch(error => console.error(error))
     },[productId])
 
     if(loading) return (
-        <section>
-            <p>Cargando el contenido... ⌛</p>
+        <section className="product-container">
+            <h2>Cargando el contenido... ⌛</h2>
         </section>
     )
 
     return (
-        <section>
-            <h2>{product.title}</h2>
-            <img src={product.img} alt={`Foto de un ${product.title}`} />
-            <p>{product.description}</p>
+        <section className="product-container">
+            <h2 id="product-title">Producto: <span style={{textDecoration: 'underline'}}>{product.title}</span></h2>
+            <div id="product-image-container-and-description" className="box-shadow rounded">
+                <img id="product-image" src={product.img} alt={`Foto de un ${product.title}`} />
+                <p>{product.description}</p>
+            </div>
             <h3>Precio ${product.price}</h3>
             <p>Disponibles: {product.stock}</p>
         </section>
