@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../context/cartContext"
-import { ItemDetail } from "./ItemDetail";
+import { ItemDetailCart } from "./ItemDetailCart";
 import './CartDetail.css'
 
 export const CartDetail = () => {
@@ -19,7 +19,7 @@ export const CartDetail = () => {
             <h3>Total de la compra: ${total.toFixed(2)}</h3>
             <h2>Listado de productos seleccionados</h2>
             <div id="cart-detail-items-container">
-                {cartState.map(elem => <ItemDetail key={elem.id} {...elem }/>)}
+                {cartState.map(elem => <ItemDetailCart key={elem.id} {...elem }/>)}
             </div>
         </section>
     )

@@ -1,5 +1,4 @@
 import { Link } from "react-router"
-import { Button } from "./Button"
 import './ProductCard.css'
 
 export const ProductCard = ({ id, title, category, price, img}) => {

@@ -12,6 +12,13 @@ export const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState(null);
+    const [productQuantity, setProductQuantity] = useState(1);
+
+    const sumProductQuantity = () => setProductQuantity(productQuantity + 1);
+    const reduceProductQuantity = () => {
+        if(productQuantity === 1) return productQuantity;
+        setProductQuantity(productQuantity - 1);
+    };
 
     useEffect(() => {
         const data = getOneProductById(productId);
@@ -27,6 +34,8 @@ export const ItemDetailContainer = () => {
         </section>
     )
 
+
+
     return (
         <section id="product-container">
             <h2 id="product-title">Producto: <span style={{textDecoration: 'underline'}}>{product.title}</span></h2>
@@ -36,7 +45,10 @@ export const ItemDetailContainer = () => {
             </div>
             <h3>Precio ${product.price}</h3>
             <p>Disponibles: {product.stock}</p>
-            <button onClick={() => addProduct(product)}>Agregar al carrito 🛒</button>
+            <p>Cantidad a agregar: {productQuantity}</p>
+            <button onClick={reduceProductQuantity}>-</button>
+            <button onClick={() => addProduct(product, productQuantity)}>Agregar al carrito 🛒</button>
+            <button onClick={sumProductQuantity}>+</button>
         </section>
     )
 }

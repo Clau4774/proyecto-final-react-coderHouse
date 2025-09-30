@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 
-export const ItemDetail = ({id, title, img, price, quantity}) => {
+export const ItemDetailCart = ({id, title, img, price, quantity}) => {
 
     const totalPrice = price * quantity;
     const {removeProduct} = useContext(CartContext);
