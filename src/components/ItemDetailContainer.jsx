@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { getOneProductById } from "../utils/bringData"
 import { useParams } from "react-router";
 import './ItemDetailContainer.css'
+import { CartContext } from "../context/cartContext";
 
 export const ItemDetailContainer = () => {
+
+    const {addProduct} = useContext(CartContext);
 
     const {productId} = useParams();
 
@@ -33,6 +36,7 @@ export const ItemDetailContainer = () => {
             </div>
             <h3>Precio ${product.price}</h3>
             <p>Disponibles: {product.stock}</p>
+            <button onClick={() => addProduct(product)}>Agregar al carrito 🛒</button>
         </section>
     )
 }
