@@ -20,9 +20,22 @@ export const CartProvider = ({children}) => {
         setCartState([...cartState, {...productToAdd, quantity: 1}]);
     }
 
+    const removeProduct = (id) => {
+        const newCart = cartState.filter(product => product.id !== id);
+        console.log(id)
+        setCartState(newCart);
+    } 
+
+    const cartTotalPrice = () => {
+        if(cartState.length !== 0) return cartState.reduce((prev, current) => current.quantity * current.price + prev, 0);
+
+        return null
+    }
+
+    const cartTotalItems = () => cartState.length;
 
     return (
-        <CartContext.Provider value={{cartState, addProduct}}>
+        <CartContext.Provider value={{cartState, addProduct, removeProduct, cartTotalPrice, cartTotalItems}}>
             {children}
         </CartContext.Provider>
     )
