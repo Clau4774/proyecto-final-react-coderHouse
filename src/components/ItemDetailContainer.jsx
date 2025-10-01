@@ -34,7 +34,7 @@ export const ItemDetailContainer = () => {
         </section>
     )
 
-
+    console.log('log para volver a hacer el deploy')
 
     return (
         <section id="product-container">
