@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { getOneProductById } from "../utils/bringData"
 import { useParams } from "react-router";
 import './ItemDetailContainer.css'
-import { CartContext } from "../context/cartContext";
+import { CartContext } from "../context/CartContext";
 
 export const ItemDetailContainer = () => {
 
@@ -33,8 +33,6 @@ export const ItemDetailContainer = () => {
             <h2>Cargando el contenido... ⌛</h2>
         </section>
     )
-
-    console.log('log para volver a hacer el deploy')
 
     return (
         <section id="product-container">
