@@ -38,15 +38,23 @@ export const ItemDetailContainer = () => {
         <section id="product-container">
             <h2 id="product-title">Producto: <span style={{textDecoration: 'underline'}}>{product.title}</span></h2>
             <div id="product-image-container-and-description" className="box-shadow rounded">
-                <img id="product-image" src={product.img} alt={`Foto de un ${product.title}`} />
-                <p>{product.description}</p>
+                <div id="product-image-container">
+                    <img id="product-image" src={product.img} alt={`Foto de un ${product.title}`} />
+                </div>
+                <div id="product-description-container">
+                    <p>{product.description}</p>
+                </div>
             </div>
-            <h3>Precio ${product.price}</h3>
-            <p>Disponibles: {product.stock}</p>
-            <p>Cantidad a agregar: {productQuantity}</p>
-            <button onClick={reduceProductQuantity}>-</button>
-            <button onClick={() => addProduct(product, productQuantity)}>Agregar al carrito 🛒</button>
-            <button onClick={sumProductQuantity}>+</button>
+            <div id="product-price-stock-quantity-container">
+                <h3>Precio ${product.price}</h3>
+                <p>Disponibles: {product.stock}</p>
+                <p>Cantidad a agregar: {productQuantity}</p>
+            </div>
+            <div id="product-controllers-container">
+                <button className="product-controller__button" onClick={reduceProductQuantity}>-</button>
+                <button className="product-controller__button"  onClick={() => addProduct(product, productQuantity)}>Agregar al carrito 🛒</button>
+                <button className="product-controller__button"  onClick={sumProductQuantity}>+</button>
+            </div>
         </section>
     )
 }
