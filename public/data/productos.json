@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Whisky Escocés",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Whisky+Escocés",
+    "img": "https://images.ctfassets.net/waruwpig3jxu/4rFDJhFBZF3xRvTBwHzb6W/c582fe94c64aaa6576e261261833bb7a/allwhisky_black_label_all-devices.webp?&w=2560&q=80",
     "category": "destilados",
     "price": 4500,
     "stock": 12,
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "title": "Vodka Premium",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Vodka+Premium",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/55/thumb_54581_default_big.jpeg",
     "category": "destilados",
     "price": 3200,
     "stock": 20,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "Ron Caribeño",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Ron+Caribeño",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/71/thumb_70127_default_medium.jpeg",
     "category": "destilados",
     "price": 2800,
     "stock": 15,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "Gin London Dry",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Gin+London+Dry",
+    "img": "https://acdn-us.mitiendanube.com/stores/001/211/660/products/bombay-750-ok1-44604b4cc3272c112d16178914620015-640-0.png",
     "category": "destilados",
     "price": 3500,
     "stock": 10,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "title": "Tequila Reposado",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Tequila+Reposado",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/63/thumb_62074_default_medium.jpeg",
     "category": "destilados",
     "price": 4000,
     "stock": 8,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "title": "Vino Malbec",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Vino+Malbec",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/69/thumb_68368_default_big.jpeg",
     "category": "vinos-y-espumantes",
     "price": 2200,
     "stock": 25,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "title": "Vino Cabernet Sauvignon",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Vino+Cabernet+Sauvignon",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/63/thumb_62001_default_big.jpeg",
     "category": "vinos-y-espumantes",
     "price": 2400,
     "stock": 18,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "title": "Vino Chardonnay",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Vino+Chardonnay",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/72/thumb_71060_default_big.jpeg",
     "category": "vinos-y-espumantes",
     "price": 2100,
     "stock": 22,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "title": "Espumante Brut",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Espumante+Brut",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/70/thumb_69700_default_big.jpeg",
     "category": "vinos-y-espumantes",
     "price": 2600,
     "stock": 14,
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "title": "Espumante Rosé",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Espumante+Rosé",
+    "img": "https://www.espaciovino.com.ar/media/default/0001/64/thumb_63346_default_big.jpeg",
     "category": "vinos-y-espumantes",
     "price": 2700,
     "stock": 16,
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "title": "Cerveza Rubia",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Cerveza+Rubia",
+    "img": "https://www.menosuno.com.ar/database/articulos/fotos/104/CERVEZA%20PATAGONIA%20BOHEMIAN%20PILSENER%20BOTELLA%20X%20710__1.jpg",
     "category": "cervezas",
     "price": 800,
     "stock": 30,
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "title": "Cerveza Negra",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Cerveza+Negra",
+    "img": "https://acdn-us.mitiendanube.com/stores/861/458/products/335371-d5bb01fa338479e48115671048376584-1024-1024.jpg",
     "category": "cervezas",
     "price": 900,
     "stock": 28,
@@ -110,7 +110,7 @@
   {
     "id": 13,
     "title": "Cerveza IPA",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Cerveza+IPA",
+    "img": "https://acdn-us.mitiendanube.com/stores/861/458/products/71-0574ab19617227a9e816915168806089-1024-1024.webp",
     "category": "cervezas",
     "price": 950,
     "stock": 26,
@@ -119,7 +119,7 @@
   {
     "id": 14,
     "title": "Cerveza Roja",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Cerveza+Roja",
+    "img": "https://elnenearg.vtexassets.com/arquivos/ids/161555/CERVEZA-PATAGONIA-AMBER-LAGER-BOTELLA-X730ML-1-8720.jpg?v=637970386633870000",
     "category": "cervezas",
     "price": 850,
     "stock": 24,
@@ -128,7 +128,7 @@
   {
     "id": 15,
     "title": "Cerveza Lager",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Cerveza+Lager",
+    "img": "https://cdn.v2.tiendanegocio.com/gallery/18711/img_18711_186eac2b734.webp",
     "category": "cervezas",
     "price": 820,
     "stock": 32,
@@ -137,7 +137,7 @@
   {
     "id": 16,
     "title": "Agua Mineral",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Agua+Mineral",
+    "img": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3040010_f.jpg",
     "category": "bebidas-sin-alcohol",
     "price": 400,
     "stock": 40,
@@ -146,7 +146,7 @@
   {
     "id": 17,
     "title": "Jugo de Naranja",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Jugo+de+Naranja",
+    "img": "https://elbanquito.com.ar/wp-content/uploads/2020/09/citric-jugo-de-naranja-con-pulpa-sin-tacc-x-15-lt-el-banquito-market.jpg",
     "category": "bebidas-sin-alcohol",
     "price": 500,
     "stock": 35,
@@ -155,7 +155,7 @@
   {
     "id": 18,
     "title": "Gaseosa Cola",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Gaseosa+Cola",
+    "img": "https://dcdn-us.mitiendanube.com/stores/001/175/558/products/coca1-477e90efe36c95e73416897054190125-1024-1024.jpg",
     "category": "bebidas-sin-alcohol",
     "price": 600,
     "stock": 38,
@@ -164,7 +164,7 @@
   {
     "id": 19,
     "title": "Tónica",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Tónica",
+    "img": "https://acdn-us.mitiendanube.com/stores/001/211/660/products/scheps-ab1229be6fb6c642ed16988667863818-640-0.png",
     "category": "bebidas-sin-alcohol",
     "price": 550,
     "stock": 33,
@@ -173,7 +173,7 @@
   {
     "id": 20,
     "title": "Jugo de Manzana",
-    "img": "https://dummyimage.com/300x300/cccccc/000000&text=Jugo+de+Manzana",
+    "img": "https://http2.mlstatic.com/D_Q_NP_710931-MLU78636901866_092024-O.webp",
     "category": "bebidas-sin-alcohol",
     "price": 520,
     "stock": 36,
