@@ -1,11 +1,14 @@
-import { useContext, useEffect, useRef } from "react"
+import { useContext, useRef, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { Link } from "react-router";
+import { finishOrder } from "../../firebase";
 import './FinishBuy.css'
 
 export const FinishBuy = () => {
 
-    const { cartState, cartTotalPrice, cartTotalItems } = useContext(CartContext);
+    const { cartState, cartTotalPrice, cartTotalItems, clearCart} = useContext(CartContext);
+
+    const [finishOrderIdState, setFinishOrderIdState] = useState('');
 
     const cartPrice = cartTotalPrice();
 
@@ -18,34 +21,47 @@ export const FinishBuy = () => {
         const form = formRef.current;
 
         const nameValue = form.name.value;
-        const surNameValue = form.surname.value;
+        const telValue = form.tel.value;
         const emailValue = form.email.value;
         const directionValue = form.direction.value;
 
         if(!nameValue.trim()) return console.log('Falta completar el nombre');
-        if(!surNameValue.trim()) return console.log('Falta completar el apellido');
+        if(!telValue.trim()) return console.log('Falta completar el apellido');
         if(!emailValue.trim()) return console.log('Falta completar el email');
         if(!directionValue.trim()) return console.log('Falta completar la dirección');
 
         form.name.value = '';
-        form.surname.value = '';
+        form.tel.value = '';
         form.email.value = '';
         form.direction.value = '';
 
         return {
             name: nameValue,
-            surName: surNameValue,
+            tel: telValue,
             email: emailValue,
             direction: directionValue
         }
 
     }
 
-    const sentBuy = event => {
+    const sentBuy = async event => {
         event.preventDefault();
         const userInfo = checkFormData();
-        console.log(userInfo)
+        const buyer = {
+            buyer: {userInfo, date: new Date()},
+            order: {...cartState, cartTotal: cartPrice}
+        }
+        const orderSent = await finishOrder(buyer);
+        clearCart();
+        setFinishOrderIdState(orderSent);
     }
+
+    if(finishOrderIdState) return (
+        <section>
+            <h2>Su compra a sido procesada con éxito, este es su identificador de compra: {finishOrderIdState}</h2>
+            <Link to="/">Ir al inicio</Link>
+        </section>
+    )
 
 
     if(!cartItems) {
@@ -75,13 +91,13 @@ export const FinishBuy = () => {
             <h2>Complete el formulario para finalizar la compra</h2>
             <form action="#" id="form__container" onSubmit={(e) => sentBuy(e)} className="box-shadow" ref={formRef}>
                 <label htmlFor="name">Indique su nombre</label>
-                <input id="name" name="name" type="text" placeholder="Indique su nombre..." />
-                <label htmlFor="surname">Indique su apellido</label>
-                <input id="surname" name="surname" type="text" placeholder="Indique su apellido..." />
+                <input id="name" name="name" type="text" required placeholder="Indique su nombre..." />
+                <label htmlFor="tel">Indique su teléfono de contacto</label>
+                <input id="tel" name="tel" type="number" required placeholder="Indique su teléfono..." />
                 <label htmlFor="email">Indique su email</label>
-                <input id="email" name="email" required type="email" placeholder="Indique su email..." />
+                <input id="email" name="email"  type="email" required placeholder="Indique su email..." />
                 <label htmlFor="direction">Indique su dirección</label>
-                <input id="direction" type="text" placeholder="Indique su dirección..." />
+                <input id="direction" name="direction" type="text" required placeholder="Indique su dirección..." />
                 <button className="box-shadow" >Finalizar compra</button>
             </form>
         </section>

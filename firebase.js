@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDoc, getDocs, where, query } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc, getDocs, where, query, addDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -69,5 +69,15 @@ export const getOneProductById = async (param) => {
     return {id: docResult.id, ...docResult.data()}
   } catch(e) {
     throw new Error('No se encontró el documento solicitado', e)
+  }
+}
+
+export const finishOrder = async (buyerAndOrder) => {
+  try {
+    const collectionRef = collection(db, 'orders');
+    const sendBuy = await addDoc(collectionRef, buyerAndOrder);
+    return sendBuy.id
+  } catch(e) {
+    throw new Error('Se produjo un error al finalizar la compra', e)
   }
 }
