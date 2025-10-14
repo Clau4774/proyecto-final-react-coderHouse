@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import './ItemDetailCart.css'
 
 export const ItemDetailCart = ({id, title, img, price, quantity}) => {
 
@@ -7,13 +8,17 @@ export const ItemDetailCart = ({id, title, img, price, quantity}) => {
     const {removeProduct} = useContext(CartContext);
 
     return (
-        <div>
-            <button onClick={() => removeProduct(id)}>Eliminar producto</button>
+        <div className="item-detail-cart__container">
+            <button className="item-detail-cart__button box-shadow"  onClick={() => removeProduct(id)}>
+                Eliminar producto
+            </button>
             <h3>{title}</h3>
             <img src={img} alt={`Foto de ${title}`}/>
-            <p>Cantidad seleccionada: {quantity}</p>
-            <p>Precio del producto: ${price.toFixed(2)}</p>
-            <p>Subtotal por productos: ${totalPrice.toFixed(2)}</p>
+            <div className="item-detail-cart__description-container">
+                <p><span>Cantidad seleccionada</span>: {quantity}</p>
+                <p><span>Precio del producto</span>: ${price.toFixed(2)}</p>
+                <p><span>Total por productos</span>: ${totalPrice.toFixed(2)}</p>
+            </div>
         </div>
     )
 }

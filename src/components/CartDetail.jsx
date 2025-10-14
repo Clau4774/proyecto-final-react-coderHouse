@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import { ItemDetailCart } from "./ItemDetailCart";
 import './CartDetail.css'
+import { Link } from "react-router";
 
 export const CartDetail = () => {
 
@@ -21,6 +22,7 @@ export const CartDetail = () => {
             <div id="cart-detail-items-container">
                 {cartState.map(elem => <ItemDetailCart key={elem.id} {...elem }/>)}
             </div>
+            <Link to='/finish-buy'>Finalizar compra</Link>
         </section>
     )
 }

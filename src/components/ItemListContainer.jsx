@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
-import { bringAllProductsList, getProductsByCategory } from '../utils/bringData'
+import { getAllProductsList, getProductsByCategory } from '../../firebase.js'
 import { useParams } from 'react-router';
 import { ProductCard } from './ProductCard';
 
@@ -14,14 +14,16 @@ export const ItemListContainer = ({title}) => {
 
     useEffect(() => {
         if(!productCategory) {
-            const data = bringAllProductsList()
-            data.then(newData => {
+            const data = getAllProductsList();
+            data
+            .then(newData => {
                 console.log(newData, 'newData')
                 setProducts(newData)
                 setLoading(false)
             })
+            .catch(e => console.error(e))
         } else {
-            const data = getProductsByCategory(productCategory)
+           const data = getProductsByCategory(productCategory)
             data.then(products => {
                 console.log(products, 'products')
                 setProducts(products)

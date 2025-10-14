@@ -1,17 +1,37 @@
-## Proyecto final coderHouse curso React.
+# Proyecto final coderHouse curso React.
 
-# Primer entrega:
+## E-commerce simulando una tienda de bebidas
 
-# Objetivos
+## ¿Cómo correr el proyecto?
 
-- Comprender los conceptos básicos de React y su estructura de componentes.
+- Primero clonar el proyecto:
 
-- Crear las bases para la homepage del ecommerce
+```bash
+git clone https://github.com/Clau4774/proyecto-final-react-coderHouse
+```
 
-# Requisitos
+- Segundo ir a la carpeta donde hayamos clonado el proyecto y ejecutar el siguiente comando:
 
-- Archivos para los componentes NavBar, CartWidget, e ItemListContainer, dentro de la carpeta components.
+```bash
+npm install
+```
 
-- Organización correcta de los mismos: NavBar e ItemListContainer serán renderizados en App, mientras que CartWidget será renderizado en NavBar.
+- Tercero inicializamos el proyecto así:
 
-- Uso de props para enviar un string con un mensaje hacia el componente ItemListContainer.
+```bash
+npm run dev
+```
+
+## Funcionalidades del proyecto
+
+Este es un breve resumen de lo que se puede realizar con esta simulación:
+
+- Ver listado de productos, ya sea filtrando por categoría o mostrando todos los disponibles.
+
+- Ir al detalle de cada producto.
+
+- Seleccionar la cantidad que queremos agregar al carrito.
+
+- Ver el detalle del carrito de compras y desde este ir al checkout. En esta sección podremos también eliminar los productos que no querramos agregar.
+
+- Desde el checkout podremos finalizar la compra, lo cual debe vaciar el carrito de compras y darnos un identificador con el orden de esta, que será el id generado por firestore en el documento creado con la orden de compra y los datos del usuario que serán llenados en el formulario de esta sección. De no llenar el formulario no se podrá finalizar la compra.

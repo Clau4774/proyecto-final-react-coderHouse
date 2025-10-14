@@ -9,11 +9,11 @@ export const CartWidget = () => {
     const {cartTotalItems} = useContext(CartContext);
 
     return (
-        <div id='cart-widget-container'>
-            <Link to='/cart'>
-            <img src={shoppingCartIcon} alt="cart-icon"/>
-            <span>{cartTotalItems()}</span>
-            </Link>
-        </div>
+        <Link to='/cart'>
+            <div id='cart-widget-container'>                
+                <img src={shoppingCartIcon} alt="cart-icon"/>
+                <span>{cartTotalItems()}</span>                
+            </div>
+        </Link>
     )
 }

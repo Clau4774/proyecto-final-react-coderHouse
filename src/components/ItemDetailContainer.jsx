@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { getOneProductById } from "../utils/bringData"
+import { getOneProductById } from "../../firebase";
 import { useParams } from "react-router";
 import './ItemDetailContainer.css'
 import { CartContext } from "../context/CartContext";
@@ -52,7 +52,10 @@ export const ItemDetailContainer = () => {
             </div>
             <div id="product-controllers-container">
                 <button className="product-controller__button" onClick={reduceProductQuantity}>-</button>
-                <button className="product-controller__button"  onClick={() => addProduct(product, productQuantity)}>Agregar al carrito 🛒</button>
+                <button className="product-controller__button"  onClick={() => {
+                    addProduct(product, productQuantity);
+                    setProductQuantity(1);
+                    }}>Agregar al carrito 🛒</button>
                 <button className="product-controller__button"  onClick={sumProductQuantity}>+</button>
             </div>
         </section>
