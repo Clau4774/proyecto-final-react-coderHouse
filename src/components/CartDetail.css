@@ -15,8 +15,7 @@
 
 @media (max-width: 750px) {
     #cart-detail-items-container {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
 
     }
 }

@@ -3,6 +3,7 @@ import { CartContext } from "../context/CartContext"
 import { Link } from "react-router";
 import { finishOrder } from "../../firebase";
 import './FinishBuy.css'
+import { ItemFinishBuyDetail } from "./ItemFinishBuyDetail";
 
 export const FinishBuy = () => {
 
@@ -78,12 +79,7 @@ export const FinishBuy = () => {
             <h2>Resumen de su compra</h2>
             <ul id="product-detail__container" className="box-shadow">
                 {cartState.map(product => (
-                    <li className="product box-shadow" key={product.id}>
-                        <p className="product-detail__title">Producto: {product.title}</p>
-                        <p>cantidad: {product.quantity}.</p>
-                        <p>precio: ${product.price.toFixed(2)}</p>
-                        <p>Total: ${(product.price * product.quantity).toFixed(2)}</p>
-                    </li>
+                    <ItemFinishBuyDetail key={product.id} {...product}/>
                 ))}
             </ul>
             <h2>Valor total de la compra</h2>

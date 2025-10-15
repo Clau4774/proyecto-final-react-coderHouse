@@ -17,9 +17,9 @@ export const CartDetail = () => {
 
     return (
         <section id="cart-detail__container">
-            <h2>Listado de productos seleccionados</h2>
+            <h1>Listado de productos seleccionados</h1>
             <h2>Total de la compra: ${total.toFixed(2)}</h2>
-            <div id="cart-detail-items-container">
+            <div id="cart-detail-items-container" className="box-shadow rounded">
                 {cartState.map(elem => <ItemDetailCart key={elem.id} {...elem }/>)}
             </div>
             <Link className="button box-shadow rounded" to='/finish-buy'>Finalizar compra</Link>
