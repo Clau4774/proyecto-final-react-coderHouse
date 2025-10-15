@@ -14,7 +14,7 @@ export const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null);
     const [productQuantity, setProductQuantity] = useState(1);
 
-    const sumProductQuantity = () => setProductQuantity(productQuantity + 1);
+    const sumProductQuantity = () =>  (product.stock > productQuantity) ? setProductQuantity(productQuantity + 1) : productQuantity;
     const reduceProductQuantity = () => {
         if(productQuantity === 1) return productQuantity;
         setProductQuantity(productQuantity - 1);
