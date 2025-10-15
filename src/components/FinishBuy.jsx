@@ -76,8 +76,8 @@ export const FinishBuy = () => {
 
     return (
         <section>
-            <h2>Resumen de su compra</h2>
-            <ul id="product-detail__container" className="box-shadow">
+            <h2>Resumen de compra</h2>
+            <ul id="product-detail__container" className="box-shadow rounded">
                 {cartState.map(product => (
                     <ItemFinishBuyDetail key={product.id} {...product}/>
                 ))}
@@ -85,15 +85,15 @@ export const FinishBuy = () => {
             <h2>Valor total de la compra</h2>
             <h3>Total: ${cartPrice.toFixed(2)}</h3>
             <h2>Complete el formulario para finalizar la compra</h2>
-            <form action="#" id="form__container" onSubmit={(e) => sentBuy(e)} className="box-shadow" ref={formRef}>
+            <form action="#" id="form__container" onSubmit={(e) => sentBuy(e)} className="box-shadow rounded" ref={formRef}>
                 <label htmlFor="name">Indique su nombre</label>
-                <input id="name" name="name" type="text" required placeholder="Indique su nombre..." />
+                <input className="box-shadow rounded" id="name" name="name" type="text" required placeholder="Indique su nombre..." />
                 <label htmlFor="tel">Indique su teléfono de contacto</label>
-                <input id="tel" name="tel" type="number" required placeholder="Indique su teléfono..." />
+                <input className="box-shadow rounded" id="tel" name="tel" type="number" required placeholder="Indique su teléfono..." />
                 <label htmlFor="email">Indique su email</label>
-                <input id="email" name="email"  type="email" required placeholder="Indique su email..." />
+                <input className="box-shadow rounded" id="email" name="email"  type="email" required placeholder="Indique su email..." />
                 <label htmlFor="direction">Indique su dirección</label>
-                <input id="direction" name="direction" type="text" required placeholder="Indique su dirección..." />
+                <input className="box-shadow rounded" id="direction" name="direction" type="text" required placeholder="Indique su dirección..." />
                 <button className="box-shadow button rounded" >Finalizar compra</button>
             </form>
         </section>

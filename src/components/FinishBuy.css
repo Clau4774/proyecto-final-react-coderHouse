@@ -14,9 +14,24 @@
     font-weight: 600;
 }
 
+h2,
+h3 {
+    text-align: center;
+}
+
+form label {
+    margin-left: 1.5rem;
+    margin-bottom: .55rem;
+    font-weight: 600;
+}
+
+form input {
+    border: none;
+    margin-bottom: 1rem;
+}
+
 .product {
     width: 300px;
-
     padding: 1rem;
 }
 
@@ -26,13 +41,12 @@
     flex-direction: column;
     max-width: 1200px;
     padding: 2rem;
-
 }
 
 
 #form__container input,
 #form__container button {
-    padding: 0.25rem 0.55rem;
+    padding: 0.55rem;
 }
 
 #form__container button {

@@ -4,7 +4,7 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 1rem;
+
     text-transform: capitalize;
     text-align: center;
 }
@@ -14,12 +14,12 @@
     text-decoration: none;
     color: var(--font-primary-color);
     transition: all .3s;
+    background: #eee;
 }
 
 .navbar-category-item:hover {
     background: #333;
     color: #eee;
-    border: 1px solid #eee;
 }
 
 @media (max-width: 800px) {
