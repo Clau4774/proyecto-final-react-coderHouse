@@ -15,10 +15,7 @@ export const ItemDetailContainer = () => {
     const [productQuantity, setProductQuantity] = useState(1);
 
     const sumProductQuantity = () =>  (product.stock > productQuantity) ? setProductQuantity(productQuantity + 1) : productQuantity;
-    const reduceProductQuantity = () => {
-        if(productQuantity === 1) return productQuantity;
-        setProductQuantity(productQuantity - 1);
-    };
+    const reduceProductQuantity = () => (productQuantity === 1) ? productQuantity : setProductQuantity(productQuantity - 1);
 
     useEffect(() => {
         const data = getOneProductById(productId);
