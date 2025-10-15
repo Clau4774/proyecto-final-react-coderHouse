@@ -60,7 +60,7 @@ export const FinishBuy = () => {
     if(finishOrderIdState) return (
         <section>
             <h2>Su compra a sido procesada con éxito, este es su identificador de compra: {finishOrderIdState}</h2>
-            <Link to="/">Ir al inicio</Link>
+            <Link to="/" className="button rounded box-shadow">Ir al inicio</Link>
         </section>
     )
 
