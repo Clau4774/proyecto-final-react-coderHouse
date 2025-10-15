@@ -8,7 +8,7 @@ export const ItemDetailCart = ({id, title, img, price, quantity}) => {
     const {removeProduct} = useContext(CartContext);
 
     return (
-        <div className="item-detail-cart__container">
+        <div className="item-detail-cart__container box-shadow rounded">
             <button className="item-detail-cart__button box-shadow"  onClick={() => removeProduct(id)}>
                 Eliminar producto
             </button>

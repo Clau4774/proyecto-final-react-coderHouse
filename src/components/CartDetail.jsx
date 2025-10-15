@@ -16,13 +16,13 @@ export const CartDetail = () => {
 
 
     return (
-        <section>
-            <h3>Total de la compra: ${total.toFixed(2)}</h3>
+        <section id="cart-detail__container">
             <h2>Listado de productos seleccionados</h2>
+            <h2>Total de la compra: ${total.toFixed(2)}</h2>
             <div id="cart-detail-items-container">
                 {cartState.map(elem => <ItemDetailCart key={elem.id} {...elem }/>)}
             </div>
-            <Link to='/finish-buy'>Finalizar compra</Link>
+            <Link className="button box-shadow rounded" to='/finish-buy'>Finalizar compra</Link>
         </section>
     )
 }

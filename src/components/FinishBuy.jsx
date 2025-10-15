@@ -68,7 +68,7 @@ export const FinishBuy = () => {
         return (
             <section>
                 <h2>Aún no tiene productos cargados, aquí puede volver a la tienda</h2>
-                <Link to="/">Ir al inicio</Link>
+                <Link className="button rounded box-shadow" to="/">Ir al inicio</Link>
             </section>
         )
     }
@@ -98,7 +98,7 @@ export const FinishBuy = () => {
                 <input id="email" name="email"  type="email" required placeholder="Indique su email..." />
                 <label htmlFor="direction">Indique su dirección</label>
                 <input id="direction" name="direction" type="text" required placeholder="Indique su dirección..." />
-                <button className="box-shadow" >Finalizar compra</button>
+                <button className="box-shadow button rounded" >Finalizar compra</button>
             </form>
         </section>
     )

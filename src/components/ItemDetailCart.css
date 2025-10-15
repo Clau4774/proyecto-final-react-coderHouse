@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    border: 1px solid red;
-    padding: 1rem;
+    padding: .55rem;
 }
 
 .item-detail-cart__container img {
@@ -21,10 +20,14 @@
     color: #eee;
 }
 
-.item-detail-cart__description-container {
-    text-align: center;
-}
+.item-detail-cart__description-container {}
 
 .item-detail-cart__description-container span {
     font-weight: 600;
+}
+
+@media (max-width: 750px) {
+    .item-detail-cart__container {
+        gap: 0;
+    }
 }

@@ -1,17 +1,19 @@
 #header-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 2rem;
     background: var(--primary-color);
-    max-height: 30vh;
+    min-height: 15vh;
     position: relative;
 }
 
 #header-main-title {
     text-transform: capitalize;
     text-decoration: none;
-    color: var(--font-primary-color)
+    font-size: 1.25rem;
+    color: var(--font-primary-color);
+    align-self: center;
 }
 
 @media (min-width: 300px) and (max-width: 600px) {

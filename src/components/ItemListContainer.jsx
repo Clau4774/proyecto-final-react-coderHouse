@@ -34,9 +34,11 @@ export const ItemListContainer = ({title}) => {
     
     if(loading) {
         return (
-            <h3>
-                Cargando los productos... ⌛
-            </h3>
+            <section id="item-list-container">
+                <h2>
+                    Cargando los productos... ⌛
+                </h2>
+            </section>
         )
     }
 
@@ -44,7 +46,7 @@ export const ItemListContainer = ({title}) => {
         <section id="item-list-container">
             {!productCategory ? <h1 id="item-list-title">{title}</h1> : <h1 id="item-list-title">{title} {productCategory}</h1>}
             
-            <div id='items-list'>
+            <div id='items-list' className="box-shadow">
                 {products.map(product => <ProductCard key={product.id} {...product}/>)}
             </div>
         </section>

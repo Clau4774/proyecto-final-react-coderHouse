@@ -1,16 +1,18 @@
 #item-list-container {
     padding: 2rem;
+    text-align: center;
 }
 
 #item-list-title {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 #items-list {
     display: flex;
     max-width: 1400px;
     padding: 1rem;
-    background: #ffedd8;
+    background: #b8b8b8;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;

@@ -26,7 +26,7 @@ export const ItemDetailContainer = () => {
     },[productId])
 
     if(loading) return (
-        <section className="product-container">
+        <section id="product-container">
             <h2>Cargando el contenido... ⌛</h2>
         </section>
     )
