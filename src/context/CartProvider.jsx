@@ -3,9 +3,21 @@ import { CartContext } from "./CartContext"
 
 export const CartProvider = ({children}) => {
 
-    const [cartState, setCartState] = useState([]);
+    const storageKeyName = 'cart-storage';
 
+    const getCartStorage = localStorage.getItem(storageKeyName);
+
+    console.log(getCartStorage, 'getCartStorage');
+    if(!getCartStorage) {
+        localStorage.setItem(storageKeyName, '[]');
+    }
+
+    const cartValue = getCartStorage !== 'undefined' ? JSON.parse(getCartStorage) : [] 
+
+    const [cartState, setCartState] = useState(cartValue);
+    
     const addProduct = (productToAdd, howMany) => {
+
         const quantityToAdd = Number(howMany)
         const findProduct = cartState.find(elem => elem.id === productToAdd.id);
 
@@ -14,14 +26,17 @@ export const CartProvider = ({children}) => {
                 ? {...product, quantity: product.quantity + quantityToAdd}
                 : product);
             setCartState(newCart)
+            localStorage.setItem(storageKeyName, JSON.stringify(newCart));
             return;
         }
         
         setCartState([...cartState, {...productToAdd, quantity: quantityToAdd}]);
+        localStorage.setItem(storageKeyName, JSON.stringify([...cartState, {...productToAdd, quantity: quantityToAdd}]));
     }
 
     const removeProduct = (id) => {
         const newCart = cartState.filter(product => product.id !== id);
+        localStorage.setItem(storageKeyName, JSON.stringify(newCart));
         setCartState(newCart);
     } 
 
@@ -33,7 +48,10 @@ export const CartProvider = ({children}) => {
 
     const cartTotalItems = () => cartState.length;
 
-    const clearCart = () => setCartState([])
+    const clearCart = () => {
+        localStorage.setItem(storageKeyName, '[]')
+        setCartState([])
+    }
 
     return (
         <CartContext.Provider value={{cartState, addProduct, removeProduct, cartTotalPrice, cartTotalItems, clearCart}}>

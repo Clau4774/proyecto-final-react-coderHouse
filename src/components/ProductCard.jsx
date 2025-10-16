@@ -12,7 +12,7 @@ export const ProductCard = ({ id, title, category, price, img}) => {
             </div>
             <p>Precio ${price.toFixed(2)}</p>
             <Link exact='true' className="button rounded box-shadow" to={`/category/${category}/product/${id}`}>
-                detalle
+                Detalle
             </Link>
         </div>
     )
