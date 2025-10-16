@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import { getAllProductsList, getProductsByCategory } from '../../firebase.js'
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { ProductCard } from './ProductCard';
 
 export const ItemListContainer = ({title}) => {
@@ -17,7 +17,6 @@ export const ItemListContainer = ({title}) => {
             const data = getAllProductsList();
             data
             .then(newData => {
-                console.log(newData, 'newData')
                 setProducts(newData)
                 setLoading(false)
             })
@@ -25,7 +24,6 @@ export const ItemListContainer = ({title}) => {
         } else {
            const data = getProductsByCategory(productCategory)
             data.then(products => {
-                console.log(products, 'products')
                 setProducts(products)
                 setLoading(false)
             })
@@ -41,6 +39,14 @@ export const ItemListContainer = ({title}) => {
             </section>
         )
     }
+
+    if(products.length === 0) return (
+        <section id="item-list-container">
+            <h1>No se han encontrado productos</h1>
+            <h2>Ha hecho una búsqueda inválida</h2>
+            <Link to="/" className='button rounded box-shadow '>Volver al inicio</Link>
+        </section>
+    )
 
     return (
         <section id="item-list-container">
