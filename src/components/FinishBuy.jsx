@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { Link } from "react-router";
-import { finishOrder } from "../../firebase";
+import { finishOrder, updateProductsStock } from "../../firebase";
 import './FinishBuy.css'
 import { ItemFinishBuyDetail } from "./ItemFinishBuyDetail";
 
@@ -53,13 +53,14 @@ export const FinishBuy = () => {
             order: {...cartState, cartTotal: cartPrice}
         }
         const orderSent = await finishOrder(buyer);
+        await updateProductsStock(cartState);
         clearCart();
         setFinishOrderIdState(orderSent);
     }
 
     if(finishOrderIdState) return (
-        <section >
-            <h2>Su compra a sido procesada con éxito, este es su identificador de compra: {finishOrderIdState}</h2>
+        <section id="finish-buy__container">
+            <h1>Su compra a sido procesada con éxito, este es su identificador de compra: {finishOrderIdState}</h1>
             <Link to="/" className="button rounded box-shadow">Ir al inicio</Link>
         </section>
     )
@@ -67,9 +68,11 @@ export const FinishBuy = () => {
 
     if(!cartItems) {
         return (
-            <section>
-                <h2>Aún no tiene productos cargados, aquí puede volver a la tienda</h2>
-                <Link className="button rounded box-shadow" to="/">Ir al inicio</Link>
+            <section id="finish-buy__container">
+                <h1>Aún no tiene productos cargados, aquí puede volver a la tienda</h1>
+                <div>
+                    <Link className="button rounded box-shadow" to="/">Ir al inicio</Link>
+                </div>
             </section>
         )
     }

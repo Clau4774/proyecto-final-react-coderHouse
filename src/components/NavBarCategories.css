@@ -23,12 +23,7 @@
 }
 
 @media (max-width: 800px) {
-    #navbar-categories-container {
-        position: static;
-        transform: translate(0%, 15%);
-        gap: 0;
 
-    }
 
     .navbar-category-item {
         padding: .55rem .15rem;

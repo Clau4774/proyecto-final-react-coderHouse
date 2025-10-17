@@ -2,6 +2,11 @@
     margin: 2rem 0;
 }
 
+#finish-buy__container div {
+    text-align: center;
+    margin: 2rem 0;
+}
+
 #product-detail__container {
     list-style: none;
     margin: 2rem auto;

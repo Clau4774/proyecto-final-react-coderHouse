@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDoc, getDocs, where, query, addDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc, getDocs, where, query, addDoc, increment, updateDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -69,6 +69,21 @@ export const getOneProductById = async (param) => {
     return {id: docResult.id, ...docResult.data()}
   } catch(e) {
     throw new Error('No se encontró el documento solicitado', e)
+  }
+}
+
+export const updateProductsStock = async (productsToUpdate) => {
+
+  try {
+    for (let product of productsToUpdate) {
+      const docRef = doc(db, 'productos', product.id);
+      const docUpdated = await updateDoc(docRef, {
+        stock: increment(-(product.quantity))
+      });
+      console.log(docUpdated, 'docUpdated');
+    }
+  } catch(e) {
+    throw new Error ('Sucedió un inconveniente al actualizar los datos del servidor', e)
   }
 }
 
