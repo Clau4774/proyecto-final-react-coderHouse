@@ -8,11 +8,13 @@ export const CartProvider = ({children}) => {
     const getCartStorage = localStorage.getItem(storageKeyName);
 
     console.log(getCartStorage, 'getCartStorage');
+
     if(!getCartStorage) {
         localStorage.setItem(storageKeyName, '[]');
     }
 
-    const cartValue = getCartStorage !== 'undefined' ? JSON.parse(getCartStorage) : [] 
+    // const cartValue = getCartStorage !== 'undefined' ? JSON.parse(getCartStorage) : [];
+    const cartValue = getCartStorage !== null ? JSON.parse(getCartStorage) : [];
 
     const [cartState, setCartState] = useState(cartValue);
     

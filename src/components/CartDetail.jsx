@@ -6,13 +6,16 @@ import { Link } from "react-router";
 
 export const CartDetail = () => {
 
-    const {cartState, cartTotalPrice} = useContext(CartContext);
+    const {cartState, cartTotalPrice, clearCart} = useContext(CartContext);
 
     const total = cartTotalPrice();
 
-    if(cartState.length === 0) return <section>
-        <h3>Su carro está vació 🛒</h3>
+    if(cartState.length === 0) return (
+    <section>
+        <h3 id="empty-cart-title">Su carro está vació 🛒</h3>
+        <Link className="button box-shadow rounded" to={'/'}>Volver al inicio</Link>
     </section>
+    )
 
 
     return (
@@ -22,7 +25,10 @@ export const CartDetail = () => {
             <div id="cart-detail-items-container" className="box-shadow rounded">
                 {cartState.map(elem => <ItemDetailCart key={elem.id} {...elem }/>)}
             </div>
-            <Link className="button box-shadow rounded" to='/finish-buy'>Finalizar compra</Link>
+            <div className="cart-link-and-button-container">
+                <Link className="button box-shadow rounded" to='/finish-buy'>Finalizar compra</Link>
+                <button className="button box-shadow rounded" onClick={clearCart}>Vaciar carro de compras</button>
+            </div>
         </section>
     )
 }

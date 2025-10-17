@@ -8,11 +8,13 @@ export const CartWidget = () => {
 
     const {cartTotalItems} = useContext(CartContext);
 
+    const cartTotal = cartTotalItems();
+
     return (
         <Link to='/cart'>
             <div id='cart-widget-container'>                
                 <img src={shoppingCartIcon} alt="cart-icon"/>
-                <span>{cartTotalItems()}</span>                
+                <span>{cartTotal}</span>                
             </div>
         </Link>
     )
