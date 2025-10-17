@@ -58,7 +58,7 @@ export const FinishBuy = () => {
     }
 
     if(finishOrderIdState) return (
-        <section>
+        <section >
             <h2>Su compra a sido procesada con éxito, este es su identificador de compra: {finishOrderIdState}</h2>
             <Link to="/" className="button rounded box-shadow">Ir al inicio</Link>
         </section>
@@ -75,8 +75,8 @@ export const FinishBuy = () => {
     }
 
     return (
-        <section>
-            <h2>Resumen de compra</h2>
+        <section id="finish-buy__container">
+            <h1>Resumen de compra</h1>
             <ul id="product-detail__container" className="box-shadow rounded">
                 {cartState.map(product => (
                     <ItemFinishBuyDetail key={product.id} {...product}/>
