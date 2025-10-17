@@ -3,6 +3,7 @@ import { getOneProductById } from "../../firebase";
 import { useParams } from "react-router";
 import './ItemDetailContainer.css'
 import { CartContext } from "../context/CartContext";
+import { AddRemoveController } from "./AddRemoveController";
 
 export const ItemDetailContainer = () => {
 
@@ -13,9 +14,7 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState(null);
     const [productQuantity, setProductQuantity] = useState(1);
-
-    const sumProductQuantity = () =>  (product.stock > productQuantity) ? setProductQuantity(productQuantity + 1) : productQuantity;
-    const reduceProductQuantity = () => (productQuantity === 1) ? productQuantity : setProductQuantity(productQuantity - 1);
+    
 
     useEffect(() => {
         const data = getOneProductById(productId);
@@ -24,6 +23,14 @@ export const ItemDetailContainer = () => {
             setLoading(false);
         }).catch(error => console.error(error))
     },[productId])
+
+    const controllerInfo = {
+        addProduct,
+        product,
+        setProduct,
+        setProductQuantity,
+        productQuantity
+    }
 
     if(loading) return (
         <section id="product-container">
@@ -47,14 +54,7 @@ export const ItemDetailContainer = () => {
                 <p>Disponibles: {product.stock}</p>
                 <p>Cantidad a agregar: {productQuantity}</p>
             </div>
-            <div id="product-controllers-container">
-                <button className="product-controller__button" onClick={reduceProductQuantity}>-</button>
-                <button className="product-controller__button"  onClick={() => {
-                    addProduct(product, productQuantity);
-                    setProductQuantity(1);
-                    }}>Agregar al carrito 🛒</button>
-                <button className="product-controller__button"  onClick={sumProductQuantity}>+</button>
-            </div>
+            <AddRemoveController {...controllerInfo}/>
         </section>
     )
 }
