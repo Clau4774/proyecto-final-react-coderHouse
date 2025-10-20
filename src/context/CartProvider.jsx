@@ -7,8 +7,6 @@ export const CartProvider = ({children}) => {
 
     const getCartStorage = localStorage.getItem(storageKeyName);
 
-    console.log(getCartStorage, 'getCartStorage');
-
     if(!getCartStorage) {
         localStorage.setItem(storageKeyName, '[]');
     }

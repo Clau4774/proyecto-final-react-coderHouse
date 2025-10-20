@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import './ItemDetailCart.css'
+import { Link } from "react-router";
 
-export const ItemDetailCart = ({id, title, img, price, quantity}) => {
+export const ItemDetailCart = ({id, title, img, price, quantity, category}) => {
 
     const totalPrice = price * quantity;
     const {removeProduct} = useContext(CartContext);
@@ -19,6 +20,7 @@ export const ItemDetailCart = ({id, title, img, price, quantity}) => {
                 <p><span>Precio del producto</span>: ${price.toFixed(2)}</p>
                 <p><span>Total por productos</span>: ${totalPrice.toFixed(2)}</p>
             </div>
+            <Link to={`/category/${category}/product/${id}`} className="button box-shadow rounded">Volver al producto</Link>
         </div>
     )
 }
